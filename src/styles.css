@@ -1,0 +1,250 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #f5f7fb;
+  background: #0b1020;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+html, body, #root {
+  margin: 0;
+  height: 100%;
+  background: linear-gradient(180deg, #0b1020 0%, #111827 100%);
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background: rgba(15, 23, 42, 0.8);
+  color: white;
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  cursor: pointer;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #e5eefc;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(8, 13, 24, 0.92);
+}
+
+.brand {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.04rem;
+}
+
+.menu {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.menu-button,
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  border: none;
+  color: white;
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem;
+  cursor: pointer;
+}
+
+.status-pill {
+  background: rgba(30, 41, 59, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+.workspace-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr 320px;
+  flex: 1;
+  min-height: 0;
+}
+
+.panel {
+  padding: 1rem;
+  border-right: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(10, 15, 26, 0.85);
+}
+
+.panel:last-child {
+  border-right: none;
+  border-left: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.panel-header {
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.mt {
+  margin-top: 1.5rem;
+}
+
+.media-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.media-list li {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.media-list small {
+  color: #9fb4d1;
+}
+
+.workspace-center {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.preview-panel,
+.timeline-panel {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.monitor-header {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  font-weight: 700;
+}
+
+.monitor-screen {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #111827, #1e293b);
+}
+
+.screen-label {
+  background: rgba(15, 118, 110, 0.2);
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+}
+
+.timeline-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+}
+
+.timeline-ruler {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(40px, 1fr));
+  gap: 0;
+  padding: 0.75rem 1rem 0;
+  font-size: 0.8rem;
+  color: #a8b5ca;
+}
+
+.tracks {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.track {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 0.75rem;
+  align-items: center;
+  min-height: 56px;
+}
+
+.track-label {
+  color: #dbeafe;
+  font-size: 0.8rem;
+}
+
+.track-clips {
+  position: relative;
+  min-height: 52px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.6);
+  overflow: hidden;
+}
+
+.clip {
+  position: absolute;
+  top: 6px;
+  height: 38px;
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.clip.selected {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.9);
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+.control-group input[type='range'] {
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .workspace-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel,
+  .panel:last-child {
+    border-right: none;
+    border-left: none;
+  }
+}
